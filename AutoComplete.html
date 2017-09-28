@@ -51,8 +51,8 @@
   <ul id='searchResult' >
    <li ng-click='setValue(result)' ng-repeat="result in searchResult | filter:searchText" ng-class="{'selected':keypos==result.id}" >{{ result.name }}</li>
   </ul>
- 
- 
+ <br />
+ <span > Selected : {{searchText}}</span>
  </div>
 
 <script>
@@ -134,7 +134,7 @@ fetch.controller('fetchCtrl', ['$scope', '$http', function ($scope, $http) {
  }
  // Set value to search box
  $scope.setValue = function(result){
-  alert(result.id)
+ // alert(result.id)
   $scope.searchText=result.name;
 //  $scope.modelValues[0].name=result.name;
   $("#searchResult").hide();
